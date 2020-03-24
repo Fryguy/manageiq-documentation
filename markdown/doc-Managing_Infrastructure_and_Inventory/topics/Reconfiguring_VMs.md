@@ -1,0 +1,44 @@
+Memory, processors, disks, ISOs, and CD/DVD Drives can be reconfigured
+on existing VMware and Red Hat Virtualization virtual machines using the
+**Reconfigure this VM** button.
+
+You can reconfigure multiple components on a virtual machine using one
+request, or make each reconfiguration separately. Confirm your changes
+using the **Submit** button.
+
+<div class="important">
+
+The following restrictions apply to adding and removing Red Hat
+Virtualization virtual machine disks:
+
+  - Supported by Red Hat Virtualization 4.0 and above.
+
+  - Only a single bootable disk is supported.
+
+  - The virtual machine requires at least one existing disk to allow
+    adding additional disks. This is because the destination storage
+    cannot be specified from the {product-title} dialog, so the storage
+    associated with the existing disk is reused.
+
+</div>
+
+Unresolved directive in Reconfiguring\_VMs.adoc -
+include::Adding\_a\_VM\_disk.adoc\[\]
+
+Unresolved directive in Reconfiguring\_VMs.adoc -
+include::Removing\_a\_VM\_disk.adoc\[\]
+
+Unresolved directive in Reconfiguring\_VMs.adoc -
+include::Reconfiguring\_a\_VM\_Disk.adoc\[\]
+
+Unresolved directive in Reconfiguring\_VMs.adoc -
+include::Reconfiguring\_VM\_Memory.adoc\[\]
+
+Unresolved directive in Reconfiguring\_VMs.adoc -
+include::Reconfiguring\_VM\_Processors.adoc\[\]
+
+Unresolved directive in Reconfiguring\_VMs.adoc -
+include::Reconfiguring\_VM\_Network\_Adapters.adoc\[\]
+
+Unresolved directive in Reconfiguring\_VMs.adoc -
+include::Reconfiguring\_VM\_ISO.adoc\[\]

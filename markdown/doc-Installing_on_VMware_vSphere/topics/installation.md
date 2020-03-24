@@ -1,0 +1,121 @@
+# Installing {product-title}
+
+Installing {product-title} consists of the following steps:
+
+1.  Downloading the appliance for your environment as a virtual machine
+    image template.
+
+2.  Setting up a virtual machine based on the appliance.
+
+3.  Configuring the {product-title\_short} appliance.
+
+After you have completed all the procedures in this guide, you will have
+a working environment on which additional customizations and
+configurations can be performed.
+
+## Choosing the Appliance Type
+
+There are two types of {product-title\_short} appliances available to
+install on the VMware vSphere platform, depending on your performance
+needs:
+
+  - `cfme-vsphere-.w.x.y.z.x86_64.vsphere.ova` - This image uses the LSI
+    Logic Parallel/SAS driver on vSphere.
+
+  - `cfme-vsphere-paravirtual.w.x.y.z.x86_64.vsphere.ova` - This image
+    uses the paravirtualization (PVSCSI) driver on vSphere.
+
+PVSCSI and LSI Logic Parallel/SAS are essentially the same when it comes
+to overall performance capability. However, the PVSCSI controller is
+more efficient in the number of host compute cycles required to process
+the same number of input/output operations per second (IOPS).
+
+If you have a storage I/O-intensive virtual machine, use the PVSCSI
+controller to save as many CPU cycles as possible, which can then be
+used by the application or host. Most modern operating systems with high
+I/O capability support one of these two controllers.
+
+## Uploading the Appliance on VMware vSphere
+
+Uploading the {product-title} appliance file onto VMware vSphere systems
+has the following requirements:
+
+  - 44 GB of space on the chosen vSphere datastore.
+
+  - 12 GB RAM.
+
+  - 4 VCPUs.
+
+  - Administrator access to the vSphere Client.
+
+  - Depending on your infrastructure, allow time for the upload.
+
+<div class="note">
+
+These are the procedural steps as of the time of writing. For more
+information, consult the VMware documentation.
+
+</div>
+
+Use the following procedure to upload the {product-title} appliance OVF
+template from your local file system using the vSphere Client.
+
+1.  In the vSphere Client, select menu:File\[Deploy OVF Template\]. The
+    Deploy OVF Template wizard appears.
+
+2.  Specify the source location and click **Next**.
+    
+      - Select **Deploy from File** to browse your file system for the
+        OVF template, for example
+        `cfme-vsphere-5.10.4.2-1.x86_64.vsphere.ova`.
+    
+      - Select **Deploy from URL** to specify a URL to an OVF template
+        located on the internet.
+
+3.  View the **OVF Template Details** page and click **Next**.
+
+4.  Select the deployment configuration from the drop-down menu and
+    click **Next**. The option selected typically controls the memory
+    settings, number of CPUs and reservations, and application-level
+    configuration parameters.
+
+5.  Select the host or cluster on which you want to deploy the OVF
+    template and click **Next**.
+
+6.  Select the host on which you want to run the run the {product-title}
+    appliance, and click **Next**.
+
+7.  Navigate to, and select the resource pool where you want to run the
+    {product-title} appliance and click **Next**.
+
+8.  Select a datastore to store the deployed {product-title} appliance,
+    and click Next. Ensure to select a datastore large enough to
+    accommodate the virtual machine and all of its virtual disk files.
+
+9.  Select the disk format to store the virtual machine virtual disks,
+    and click **Next**.
+    
+      - Select **Thin Provisioned** if the storage is allocated on
+        demand as data is written to the virtual disks.
+    
+      - Select **Thick Provisioned** if all storage is immediately
+        allocated.
+
+10. For each network specified in the OVF template, select a network by
+    right-clicking the **Destination Network** column in your
+    infrastructure to set up the network mapping and click **Next**.
+
+11. The **IP Allocation** page does not require any configuration
+    changes. Leave the default settings in the **IP Allocation** page
+    and click **Next**.
+
+12. Set the user-configurable properties and click **Next**. The
+    properties to enter depend on the selected IP allocation scheme. For
+    example, you are prompted for IP related information for the
+    deployed virtual machines only in the case of a fixed IP allocation
+    scheme.
+
+13. Review your settings and click **Finish**.
+
+The progress of the import task appears in the vSphere Client Status
+panel.

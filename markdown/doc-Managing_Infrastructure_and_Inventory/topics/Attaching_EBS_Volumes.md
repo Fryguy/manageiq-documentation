@@ -1,0 +1,16 @@
+To attach a volume to an instance:
+
+1.  Navigate to menu:Storage\[Block Storage \> Volumes\].
+
+2.  Select the volume to attach.
+
+3.  Click ![Configuration](1847.png) (**Configuration**), then click
+    ![Attach selected Cloud Volume to an Instance](volume-icon.png)
+    (**Attach selected Cloud Volume to an Instance**) to open the
+    **Attach Cloud Volume** screen.
+
+4.  Select an instance from the list.
+
+5.  Optionally, enter a **Device Mountpoint**.
+
+6.  Click **Attach**.
